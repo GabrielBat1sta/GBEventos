@@ -1,0 +1,34 @@
+﻿@page
+@model GBEventos.Pages.Account.ListarUsuariosModel
+@{
+	ViewData["Title"] = "Lista de Usuários";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model.Usuarios != null && Model.Usuarios.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Senha</th> <!-- (Evite mostrar senhas em produção!) -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model.Usuarios)
+            {
+                <tr>
+                    <td>@usuario.Nome</td>
+                    <td>@usuario.Email</td>
+                    <td>@usuario.Senha</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum usuário encontrado.</p>
+}

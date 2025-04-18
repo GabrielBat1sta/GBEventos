@@ -1,0 +1,41 @@
+﻿@page
+@model GBEventos.Pages.Eventos.CreateEventModel
+@{
+	ViewData["Title"] = "Create Event";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div>
+        <label>Nome:</label>
+        <input asp-for="Eventos.Nome" class="form-control" />
+        <span asp-validation-for="Eventos.Nome" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Descricao:</label>
+        <input asp-for="Eventos.Descricao" class="form-control" />
+        <span asp-validation-for="Eventos.Descricao" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Data:</label>
+        <input asp-for="Eventos.Data" type="date" class="form-control" />
+        <span asp-validation-for="Eventos.Data" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Endereco:</label>
+        <input asp-for="Eventos.Endereco" class="form-control" />
+        <span asp-validation-for="Eventos.Endereco" class="text-danger"></span>
+    </div>
+    <div>
+        <label>LinkPersonalizado:</label>
+        <input asp-for="Eventos.LinkPersonalizado" class="form-control" />
+        <span asp-validation-for="Eventos.LinkPersonalizado" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Criar Evento</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

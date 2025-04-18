@@ -1,0 +1,31 @@
+﻿@page
+@model GBEventos.Pages.Account.CreateUserModel
+@{
+	ViewData["Title"] = "Cadastrar Usuário";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div>
+        <label>Nome:</label>
+        <input asp-for="Usuarios.Nome" class="form-control" />
+        <span asp-validation-for="Usuarios.Nome" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Usuarios.Email" class="form-control" />
+        <span asp-validation-for="Usuarios.Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Senha:</label>
+        <input asp-for="Usuarios.Senha" type="password" class="form-control" />
+        <span asp-validation-for="Usuarios.Senha" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

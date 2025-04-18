@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-navbar {
+    background-color: rgb(01,00,07);
+    padding: 10px 40px;
+}
+
+    .custom-navbar .navbar-brand {
+        font-weight: bold;
+        font-size: 20px;
+        color: white !important;
+    }
+
+    .custom-navbar .nav-link {
+        color: white !important;
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+        .custom-navbar .nav-link:hover {
+            text-decoration: underline;
+        }
+
+.auth-buttons .nav-link {
+    padding: 6px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.auth-buttons .cadastrar {
+    background-color: rgb(44, 43, 49);
+    color: white !important;
+}
+
+.auth-buttons .entrar {
+    color: white !important;
+}
+

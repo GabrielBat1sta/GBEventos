@@ -1,0 +1,43 @@
+﻿@page
+@model GBEventos.Pages.Eventos.EventosModel
+@{
+	ViewData["Title"] = "Eventos";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model.Eventos != null && Model.Eventos.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>UsuariosId</th>
+                <th>Nome</th>
+                <th>Descricao</th>
+				<th>Data</th>
+				<th>Endereco</th>
+                <th>LinkPersonalizado</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eventos in Model.Eventos)
+            {
+                <tr>
+                    <td>@eventos.Id</td>
+                    <td>@eventos.UsuariosId</td>
+                    <td>@eventos.Nome</td>
+                    <td>@eventos.Descricao</td>
+                    <td>@eventos.Data</td>
+                    <td>@eventos.Endereco</td>
+                    <td>@eventos.LinkPersonalizado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum usuário encontrado.</p>
+}
