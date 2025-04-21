@@ -4,64 +4,36 @@
 	ViewData["Title"] = "Create Event";
 }
 
-<div>
-	<h4>Crie seu evento</h4>
-	<p>Preencha as informacoes do seu evento</p>
-</div>
-<form method="post" asp-page-handler="Avancar">
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
     <div>
-        <label>Tipo de Evento:</label>
-        <select asp-for="Eventos.TipoEvento" class="form-control">
-            <option value="">Selecione o tipo de evento</option>
-            <option value="Casamento">Casamento</option>
-            <option value="Aniversario">Aniversário</option>
-            <option value="Batizado">Batizado</option>
-            <option value="Formatura">Formatura</option>
-            <option value="Outro">Outro</option>
-		</select>
-        <span asp-validation-for="Eventos.TipoEvento" class="text-danger"></span>
+        <label>Nome:</label>
+        <input asp-for="Eventos.Nome" class="form-control" />
+        <span asp-validation-for="Eventos.Nome" class="text-danger"></span>
     </div>
     <div>
-        <label>Formato do Evento:</label>
-        <select asp-for="Eventos.FormatoEvento" class="form-control">
-            <option value="">Selecione o formato do evento</option>
-            <option value="Presencial">Presencial</option>
-            <option value="Virtual">Virtual</option>
-        </select>
-        <span asp-validation-for="Eventos.FormatoEvento" class="text-danger"></span>
+        <label>Descricao:</label>
+        <input asp-for="Eventos.Descricao" class="form-control" />
+        <span asp-validation-for="Eventos.Descricao" class="text-danger"></span>
     </div>
     <div>
-        <label>Nome Celebrado:</label>
-        <input asp-for="Eventos.NomeCelebrado" class="form-control" />
-        <span asp-validation-for="Eventos.NomeCelebrado" class="text-danger"></span>
+        <label>Data:</label>
+        <input asp-for="Eventos.Data" type="date" class="form-control" />
+        <span asp-validation-for="Eventos.Data" class="text-danger"></span>
     </div>
     <div>
-        <label>Data do Evento:</label>
-        <input asp-for="Eventos.DataEvento" class="form-control" type="date" />
-        <span asp-validation-for="Eventos.DataEvento" class="text-danger"></span>
+        <label>Endereco:</label>
+        <input asp-for="Eventos.Endereco" class="form-control" />
+        <span asp-validation-for="Eventos.Endereco" class="text-danger"></span>
     </div>
     <div>
-        <label>Hora do Evento:</label>
-        <input asp-for="Eventos.HoraEvento" type="time" class="form-control" />
-        <span asp-validation-for="Eventos.HoraEvento" class="text-danger"></span>
-    </div>
-    <div>
-		<label>Sexo do Celebrado:</label>
-		<select asp-for="Eventos.SexoCelebrado" class="form-control">
-			<option value="">Selecione o sexo do celebrado</option>
-			<option value="Masculino">Masculino</option>
-			<option value="Feminino">Feminino</option>
-			<option value="Não informar">Não informar</option>
-		</select>
-        <span asp-validation-for="Eventos.SexoCelebrado" class="text-danger"></span>
-    </div>
-    <div>
-        <label> Idade do Celebrado:</label>
-        <input asp-for="Eventos.IdadeCelebrado" class="form-control" />
-        <span asp-validation-for="Eventos.IdadeCelebrado" class="text-danger"></span>
+        <label>LinkPersonalizado:</label>
+        <input asp-for="Eventos.LinkPersonalizado" class="form-control" />
+        <span asp-validation-for="Eventos.LinkPersonalizado" class="text-danger"></span>
     </div>
     <br />
-    <button type="submit" class="btn btn-primary">Avancar</button>
+    <button type="submit" class="btn btn-primary">Criar Evento</button>
 </form>
 
 @section Scripts {

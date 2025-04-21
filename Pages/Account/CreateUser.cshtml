@@ -19,13 +19,11 @@
     </div>
     <div>
         <label>Senha:</label>
-        <input asp-for="Usuarios.SenhaHash" type="password" class="form-control" />
-        <span asp-validation-for="Usuarios.SenhaHash" class="text-danger"></span>
+        <input asp-for="Usuarios.Senha" type="password" class="form-control" />
+        <span asp-validation-for="Usuarios.Senha" class="text-danger"></span>
     </div>
     <br />
     <button type="submit" class="btn btn-primary">Cadastrar</button>
-
-
 </form>
 
 @section Scripts {

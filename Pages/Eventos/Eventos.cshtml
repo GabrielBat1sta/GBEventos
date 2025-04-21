@@ -13,13 +13,11 @@
             <tr>
                 <th>Id</th>
                 <th>UsuariosId</th>
-                <th>TipoEvento</th>
-                <th>FormatadoEvento</th>
-				<th>NomeCelebrado</th>
-				<th>DataEvento</th>
-                <th>HoraEvento</th>
-				<th>SexoCelebrado</th>
-				<th>IdadeCelebrado</th>
+                <th>Nome</th>
+                <th>Descricao</th>
+				<th>Data</th>
+				<th>Endereco</th>
+                <th>LinkPersonalizado</th>
                 
             </tr>
         </thead>
@@ -28,14 +26,12 @@
             {
                 <tr>
                     <td>@eventos.Id</td>
-                    <td>@eventos.UsuarioId</td>
-                    <td>@eventos.TipoEvento</td>
-                    <td>@eventos.FormatoEvento</td>
-                    <td>@eventos.NomeCelebrado</td>
-                    <td>@eventos.DataEvento</td>
-                    <td>@eventos.HoraEvento</td>
-                    <td>@eventos.SexoCelebrado</td>
-					<td>@eventos.IdadeCelebrado</td>
+                    <td>@eventos.UsuariosId</td>
+                    <td>@eventos.Nome</td>
+                    <td>@eventos.Descricao</td>
+                    <td>@eventos.Data</td>
+                    <td>@eventos.Endereco</td>
+                    <td>@eventos.LinkPersonalizado</td>
                 </tr>
             }
         </tbody>
@@ -43,5 +39,5 @@
 }
 else
 {
-    <p>Nenhum evento encontrado.</p>
+    <p>Nenhum usuário encontrado.</p>
 }
