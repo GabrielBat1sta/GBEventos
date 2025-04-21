@@ -17,15 +17,15 @@ namespace GBEventos.Pages.Eventos
         {
             _context = context;
         }
+
         public IActionResult OnPost()
         {
-            Console.WriteLine("entrei no post");
             if (!ModelState.IsValid)
                 return Page();
 
 
             Eventos.Id = Guid.NewGuid();
-            Eventos.UsuariosId = Guid.Parse("80D4D8E4-A373-43CF-92FB-7555E4A5C386");
+            
             try
             {
                 _context.Eventos.Add(Eventos);
@@ -34,11 +34,26 @@ namespace GBEventos.Pages.Eventos
             catch (Exception ex)
             {
                 Console.WriteLine("Erro ao salvar: " + ex.Message);
-                // ou TempData["msg"] = "Erro ao salvar no banco: " + ex.Message;
                 return Page();
             }
 
             return RedirectToPage("/Eventos/eventos");
         }
+
+        public IActionResult OnPostAvancar()
+        {
+            // Guardar os dados do evento temporariamente com TempData
+            TempData["TipoEvento"] = Eventos.TipoEvento;
+            TempData["FormatoEvento"] = Eventos.FormatoEvento;
+            TempData["NomeCelebrado"] = Eventos.NomeCelebrado;
+            TempData["DataEvento"] = Eventos.DataEvento?.ToString("dd-MM-yyyy");
+            TempData["HoraEvento"] = Eventos.HoraEvento?.ToString();
+            TempData["SexoCelebrado"] = Eventos.SexoCelebrado;
+            
+
+            return RedirectToPage("/Account/CreateUser");
+        }
+
+
     }
 }

@@ -16,5 +16,23 @@ namespace GBEventos.Data
         public DbSet<ConvidadosModels> Convidados { get; set; }
         public DbSet<PresentesModels> Presentes { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<UsuariosModels>()
+                .HasMany(u => u.Eventos)
+                .WithOne(e => e.Usuarios)
+                .HasForeignKey(e => e.UsuarioId);
+
+            modelBuilder.Entity<EventosModels>()
+                .HasMany(e => e.Convidados)
+                .WithOne(c => c.Evento)
+                .HasForeignKey(c => c.EventoId);
+
+            modelBuilder.Entity<EventosModels>()
+                .HasMany(e => e.Presentes)
+                .WithOne(p => p.Evento)
+                .HasForeignKey(p => p.EventoId);
+        }
+
     }
 }
